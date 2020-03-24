@@ -7,13 +7,20 @@ const config = require('./config.json');
 const Redis = require('ioredis');
 const scraper = require('./scraper');
 const countryMap = require('./funcs/countryMap');
+const path = require('path');
 
 app.use(cors());
 
+const port = process.env.port || config.port || 3002;
+const redisHost = process.env.db_host || config.redis.host;
+const redisPort = process.env.db_port || config.redis.port;
+const redisPass = process.env.db_pass || config.redis.pass;
+
 // create redis instance :O
-const redis = new Redis(config.redis.host, {
-  password: config.redis.password,
-  port: config.redis.port
+const redis = new Redis(redisHost, {
+  pipeline: false,
+  password: redisPass,
+  port: redisPort
 })
 
 const keys = config.keys;
@@ -29,8 +36,8 @@ const execAll = () => {
 execAll()
 setInterval(execAll, config.interval);
 
-app.get("/", async function (request, response) {
-  response.redirect('https://github.com/novelcovid/api');
+app.get("/", async function (req, res, next) {
+  res.sendFile(path.join(__dirname + '/index.html'));
 });
 var listener = app.listen(config.port, function () {
   console.log("Your app is listening on port " + listener.address().port);
@@ -100,10 +107,6 @@ app.get("/v2/historical/:country", async function (req, res) {
 });
 
 
-app.get("/invite/", async function (req, res) {
-  res.redirect("https://discordapp.com/oauth2/authorize?client_id=685268214435020809&scope=bot&permissions=537250880")
-});
-
-app.get("/support/", async function (req, res) {
-  res.redirect("https://discord.gg/EvbMshU")
+app.get("/support/", async function (req, res, next) {
+  res.redirect("https://discord.gg/z2wS84v")
 });

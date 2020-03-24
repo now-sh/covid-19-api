@@ -1,0 +1,17 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://github.com/casjaysdev-forked-projects/NovelCOVID-API
+  url = https://github.com/now-sh/covid-19-api
+  mirror = true
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[remote "fetch"]
+	url = https://github.com/NovelCOVID/API
+	fetch = +refs/heads/*:refs/remotes/fetch/*
+	pushurl = no_push
