@@ -1,14 +1,28 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 # Join our Server!
 [![Discord server](https://discordapp.com/api/guilds/689535536934813823/embed.png?style=banner4)](https://discord.gg/EvbMshU)
+
+# Partners with PrimedHosting
+Great and affordable prices! Starting at $0.75. Get started [here](https://primedhosting.com/NovelCovid)
+Join the [Discord server](https://primedhosting.com/discord)
 
 # API
 API for Current cases and more stuff about COVID-19 or the Novel Coronavirus Strain
 https://corona.lmao.ninja/
 
-# Endpoints
+# Recomended by Postman
+NovelCovid API is recomended by Postman [here](https://covid-19-apis.postman.com/)
+
+# Endpoints v2
+|  GET Request  | Output  |
+| ------------ | ------------ |
+| https://corona.lmao.ninja/v2/historical | Get historical data from the start of 2020. (JHU CSSE GISand Data) |
+| https://corona.lmao.ninja/v2/historical/{country-name} | Get historical data from the start of 2020 for a specific country. (JHU CSSE GISand Data) |
+|  https://corona.lmao.ninja/v2/jhucsse | Return data from the Johns Hopkins CSSE Data Repository (Country, province, confirmed, death, recovered) |
+
+# Endpoints v1
 |  GET Request  | Output  |
 | ------------ | ------------ |
 |  https://corona.lmao.ninja/all | Returns all total cases, recovery, and deaths. |
@@ -16,21 +30,20 @@ https://corona.lmao.ninja/
 |  https://corona.lmao.ninja/countries?sort={parameter} | Returns data of each country sorted by the parameter |
 |  https://corona.lmao.ninja/countries/{country-name} | Returns data of a specific country. If an exact name match is desired pass ?strict=true in the query string |
 |  https://corona.lmao.ninja/states | Returns all United States of America and their Corona data |
-|  https://corona.lmao.ninja/jhucsse | Return data from the Johns Hopkins CSSE Data Repository (Provinces and such) |
-| https://corona.lmao.ninja/historical | Get historical data from the start of 2020. (JHU CSSE GISand Data) |
-| https://corona.lmao.ninja/historical/{country-name} | Get historical data from the start of 2020 for a specific country. (JHU CSSE GISand Data) |
+|  https://corona.lmao.ninja/jhucsse | **DEPRECATED USE V2 ENDPOINT** Return data from the Johns Hopkins CSSE Data Repository (Provinces and such) |
+| https://corona.lmao.ninja/historical | **DEPRECATED USE V2 ENDPOINT** Get historical data from the start of 2020. (JHU CSSE GISand Data) |
+| https://corona.lmao.ninja/historical/{country-name} | **DEPRECATED USE V2 ENDPOINT** Get historical data from the start of 2020 for a specific country. (JHU CSSE GISand Data) |
 
 ## Loading and using our NPM Package
 
-We suggest you load the module via `require`, pending the stabalizing of es modules in node:
+We suggest you load the module via `require`, considering ES modules in Node.js are not yet stable.
 
 ```js
 const covid = require('novelcovid');
 ```
 
-# Documentation
-
-To actually use the data, you will need an [async/await](https://javascript.info/async-await).
+## Documentation
+Executing a method will return a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). The examples here utilise [async/await](https://javascript.info/async-await) to access the data.
 
 ```js
 // Declare the package
@@ -88,7 +101,8 @@ You can read more about **new Date()** [here](https://developer.mozilla.org/en-U
 > https://discord.gg/EvbMshU
 
 ### Sources: 
-> https://www.worldometers.info/coronavirus/ 
+> https://www.worldometers.info/coronavirus/
+
 > https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series
 
 ## Contributors ✨
@@ -110,6 +124,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/buster95"><img src="https://avatars0.githubusercontent.com/u/15637669?v=4" width="100px;" alt=""/><br /><sub><b>Walter Corrales</b></sub></a><br /><a href="https://github.com/NovelCOVID/API/commits?author=buster95" title="Code">💻</a></td>
+    <td align="center"><a href="https://AhmadAwais.com"><img src="https://avatars1.githubusercontent.com/u/960133?v=4" width="100px;" alt=""/><br /><sub><b>Ahmad Awais ⚡️</b></sub></a><br /><a href="https://github.com/NovelCOVID/API/commits?author=ahmadawais" title="Documentation">📖</a></td>
   </tr>
 </table>
 
