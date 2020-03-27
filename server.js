@@ -3,6 +3,7 @@ var app = express();
 var axios = require("axios");
 var cheerio = require("cheerio");
 var cors = require('cors');
+const dotenv = require('dotenv');
 const config = require('./config.json');
 const Redis = require('ioredis');
 const scraper = require('./scraper');
@@ -11,6 +12,7 @@ const path = require('path');
 const country_utils = require('./utils/country_utils');
 
 app.use(cors());
+require('dotenv').config()
 
 const port = process.env.port || config.port || 3002;
 const redisHost = process.env.db_host || config.redis.host;
@@ -23,6 +25,7 @@ const redis = new Redis(redisHost, {
   password: redisPass,
   port: redisPort
 })
+console.log(redis, redisPass)
 
 const keys = config.keys;
 
@@ -41,7 +44,7 @@ setInterval(execAll, config.interval);
 app.get("/", async function (req, res, next) {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
-var listener = app.listen(config.port, function () {
+var listener = app.listen(port, function () {
   console.log("Your app is listening on port " + listener.address().port);
 });
 app.get("/all/", async function (req, res) {
@@ -96,11 +99,10 @@ app.get("/countries/:country", async function (req, res) {
     return;
   }
   // adding status code 404 not found and sending response
-  res.status(404).send({ message: "Country not found or Has no cases" });
-});
+  res.status(404).send({ message: "Country not found or Has no cases" });});
 
 // V2 ROUTES
-app.get("/v2/historical/", async function (req, res) {
+app.get("/v2/historical", async function (req, res) {
   let data = JSON.parse(await redis.get(keys.historical_v2))
   res.send(data);
 });
@@ -111,11 +113,10 @@ app.get("/v2/historical/:country", async function (req, res) {
   res.send(countryData);
 });
 
-app.get("/v2/jhucsse/", async function (req, res) {
+app.get("/v2/jhucsse", async function (req, res) {
   let data = JSON.parse(await redis.get(keys.jhu_v2))
   res.send(data);
 });
-
 
 app.get("/support/", async function (req, res, next) {
   res.redirect("https://discord.gg/z2wS84v")
