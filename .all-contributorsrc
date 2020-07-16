@@ -24,10 +24,10 @@
       ]
     },
     {
-      "login": "dicedtomatoreal",
-      "name": "dicedtomato",
-      "avatar_url": "https://avatars0.githubusercontent.com/u/35403473?v=4",
-      "profile": "https://github.com/dicedtomatoreal",
+      "login": "himanshu2406",
+      "name": "Himanshu Rathore",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/37951606?v=4",
+      "profile": "https://github.com/himanshu2406",
       "contributions": [
         "code"
       ]
@@ -84,6 +84,79 @@
       "profile": "https://AhmadAwais.com",
       "contributions": [
         "doc"
+      ]
+    },
+    {
+      "login": "MrAugu",
+      "name": "MrAugu",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/39545629?v=4",
+      "profile": "https://discord.gg/rk7cVyk",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "chroventer",
+      "name": "Ayyan Lewis",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/34645569?v=4",
+      "profile": "http://chroventer.github.io",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "benjamin-sommer",
+      "name": "Ben Sommer",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/39101651?v=4",
+      "profile": "http://bensommer.co.uk",
+      "contributions": [
+        "bug",
+        "code"
+      ]
+    },
+    {
+      "login": "nibble-4bits",
+      "name": "Luis De Anda",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/38052706?v=4",
+      "profile": "https://github.com/nibble-4bits",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "puf17640",
+      "name": "puf17640",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/17516174?v=4",
+      "profile": "https://coviddetail.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "OlukaDenis",
+      "name": "Oluka Denis",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/37341054?v=4",
+      "profile": "http://olukadeno@gmail.com",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "egbakou",
+      "name": "Kodjo Laurent Egbakou",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/26142591?v=4",
+      "profile": "https://lioncoding.com",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "jsebastianms1",
+      "name": "Juan Sebastián Marulanda Sánchez",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/22509688?v=4",
+      "profile": "https://github.com/jsebastianms1",
+      "contributions": [
+        "code"
       ]
     }
   ],

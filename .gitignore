@@ -8,6 +8,11 @@
 .now
 
 config.json
+<<<<<<< HEAD
+=======
+.env
+package-lock.json
+>>>>>>> f7e1726cc2973590f9bd3759e0277df94c2a8daa
 dump.rdb
 json.sqlite
 .vscode/
