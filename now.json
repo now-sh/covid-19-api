@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "server.js",
+      "src": "index.js",
       "use": "@now/node-server"
     }
   ],
@@ -15,7 +15,7 @@
         "Access-Control-Allow-Credentials": "true"
       },
       "src": "^/(.*)$",
-      "dest": "/server.js"
+      "dest": "/index.js"
     }
   ]
 }
