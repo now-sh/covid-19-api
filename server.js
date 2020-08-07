@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var express = require('express');
 var app = express();
 var axios = require("axios");
@@ -203,7 +202,6 @@ app.use((req, res, next) => {
 		logger.info(`Status: ${res.statusCode}\t\t URL: ${res.req.path}`);
 	}
 	next();
->>>>>>> f7e1726cc2973590f9bd3759e0277df94c2a8daa
 });
 // deprecated routes
 app.use(require('./routes/apiDeprecated'));
