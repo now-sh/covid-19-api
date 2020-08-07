@@ -20,7 +20,8 @@ const countries = [
 	'New Zealand',
 	'Colombia',
 	'UK',
-	'Israel'
+	'Israel',
+	'Mexico'
 ].sort();
 
 describe('TESTING /v2/gov general', () => {
@@ -141,6 +142,7 @@ describe('TESTING /v2/gov/germany', () => {
 					element.should.have.property('casePreviousDayChange');
 					element.should.have.property('casesPerHundredThousand');
 					element.casesPerHundredThousand.should.be.at.least(0);
+					element.should.have.property('sevenDayCasesPerHundredThousand');
 					element.should.have.property('deaths');
 					element.deaths.should.be.at.least(0);
 				});
@@ -303,10 +305,14 @@ describe('TESTING /v2/gov/india', () => {
 			.end((err, res) => {
 				testBasicProperties(err, res, 200, 'object');
 				res.body.should.have.property('total');
-				res.body.total.should.have.property('total');
 				res.body.total.should.have.property('active');
 				res.body.total.should.have.property('recovered');
 				res.body.total.should.have.property('deaths');
+				res.body.total.should.have.property('cases');
+				res.body.total.should.have.property('todayActive');
+				res.body.total.should.have.property('todayRecovered');
+				res.body.total.should.have.property('todayDeaths');
+				res.body.total.should.have.property('todayCases');
 				done();
 			});
 	});
@@ -319,10 +325,14 @@ describe('TESTING /v2/gov/india', () => {
 				res.body.should.have.property('states');
 				res.body.states.forEach((state) => {
 					state.should.have.property('state');
-					state.should.have.property('total');
 					state.should.have.property('active');
 					state.should.have.property('recovered');
 					state.should.have.property('deaths');
+					state.should.have.property('cases');
+					state.should.have.property('todayActive');
+					state.should.have.property('todayRecovered');
+					state.should.have.property('todayDeaths');
+					state.should.have.property('todayCases');
 				});
 				done();
 			});
@@ -335,6 +345,7 @@ describe('TESTING /v2/gov/vietnam', () => {
 			.get('/v2/gov/vietnam')
 			.end((err, res) => {
 				testBasicProperties(err, res, 200, 'array');
+				res.body.length.should.be.at.least(1);
 				res.body.forEach((element) => {
 					element.should.have.property('updated');
 					element.should.have.property('city');
@@ -455,6 +466,38 @@ describe('TESTING /v2/gov/UK', () => {
 				latest.should.have.property('admissions');
 				latest.should.have.property('newDeaths');
 				latest.should.have.property('deaths');
+				done();
+			});
+	});
+});
+
+describe('TESTING /v2/gov/mexico', () => {
+	it('/v2/covid-19/gov/mexico correct properties', (done) => {
+		chai.request(app)
+			.get('/v2/gov/mexico')
+			.end((err, res) => {
+				testBasicProperties(err, res, 200, 'object');
+				res.body.should.have.property('updated');
+				res.body.should.have.property('nationalData');
+				res.body.should.have.property('stateData');
+				res.body.should.have.property('source');
+				res.body.nationalData.should.have.property('newCases');
+				res.body.nationalData.should.have.property('newDeaths');
+				res.body.nationalData.should.have.property('cases');
+				res.body.nationalData.should.have.property('deaths');
+				res.body.nationalData.should.have.property('recovered');
+			});
+		done();
+	});
+});
+
+describe('TESTING /v2/gov/mexico', () => {
+	it('/v2/gov/mexico correct amount of states', (done) => {
+		chai.request(app)
+			.get('/v2/gov/mexico')
+			.end((err, res) => {
+				testBasicProperties(err, res, 200, 'object');
+				res.body.stateData.length.should.equal(32);
 				done();
 			});
 	});
