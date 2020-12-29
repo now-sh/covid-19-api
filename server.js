@@ -8,12 +8,8 @@ const bodyParser = require('body-parser');
 const logger = require('./utils/logger');
 const path = require('path');
 const { config, port, redis, scraper, keys } = require('./routes/instances');
-const { updateNYTCache, updateAppleCache } = require('./utils/cache');
 
 if (config.sentry_key) Sentry.init({ dsn: config.sentry_key });
-
-updateNYTCache();
-updateAppleCache();
 
 app.use(require('cors')({ origin: '*' }));
 app.use(express.static(path.join(__dirname, '/public')));
@@ -97,6 +93,10 @@ app.use(require('./routes/v3/covid-19/apiNYT'));
 app.use(require('./routes/v3/covid-19/apiApple'));
 app.use(require('./routes/v3/covid-19/apiGov'));
 app.use(require('./routes/v3/covid-19/apiVaccine'));
+<<<<<<< HEAD
+=======
+app.use(require('./routes/v3/covid-19/apiTherapeutics'));
+>>>>>>> 744a95cc2eb511427e68cbe00c9224cd47873883
 app.use(require('./routes/v3/influenza/apiInfluenza'));
 
 app.listen(port, () => logger.info(`Your app is listening on port ${port}`));

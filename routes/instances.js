@@ -11,6 +11,10 @@ const nytData = require('../scrapers/covid-19/nytData');
 const appleData = require('../scrapers/covid-19/appleMobilityData');
 const govData = require('../scrapers/covid-19/govScrapers/getGovData');
 const getVaccineData = require('../scrapers/covid-19/getVaccine');
+<<<<<<< HEAD
+=======
+const getTherapeuticsData = require('../scrapers/covid-19/getTherapeutics');
+>>>>>>> 744a95cc2eb511427e68cbe00c9224cd47873883
 const getCDCDInfluenzaData = require('../scrapers/influenza/getCDC');
 
 // KEYS
@@ -59,6 +63,13 @@ module.exports = {
 			await getVaccineData(keys, redis);
 			logger.info('Finished Vaccine scraping!');
 		},
+<<<<<<< HEAD
+=======
+		executeScraperTherapeutics: async () => {
+			await getTherapeuticsData(keys, redis);
+			logger.info('Finished Therapeutics scraping!');
+		},
+>>>>>>> 744a95cc2eb511427e68cbe00c9224cd47873883
 		excecuteScraperInfluenza: async () => {
 			await getCDCDInfluenzaData(keys, redis);
 			logger.info('Finished CDC Influenza scraping!');

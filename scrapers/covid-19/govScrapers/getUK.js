@@ -1,9 +1,21 @@
 const axios = require('axios');
+const https = require('https');
 const logger = require('../../../utils/logger');
+
+const instance = axios.create({
+	httpsAgent: new https.Agent({
+		rejectUnauthorized: false
+	})
+});
 
 const ukData = async () => {
 	try {
+<<<<<<< HEAD
 		var data = {};
+=======
+		const data = {};
+
+>>>>>>> 744a95cc2eb511427e68cbe00c9224cd47873883
 		const structure = {
 			date: 'date',
 			todayTests: 'newTestsByPublishDate',
@@ -15,15 +27,37 @@ const ukData = async () => {
 			usedVentilationBeds: 'covidOccupiedMVBeds',
 			newAdmissions: 'newAdmissions',
 			admissions: 'cumAdmissions',
-			newDeaths: 'newDeathsByPublishDate',
-			deaths: 'cumDeathsByPublishDate'
+			// Deaths within 28 days of positive test by date reported, see: https://coronavirus.data.gov.uk/deaths
+			// Daily total
+			todayDeaths: 'newDeaths28DaysByPublishDate',
+			// Cumulative total
+			totalDeaths: 'cumDeaths28DaysByPublishDate',
+			// ONS data for deaths with COVID-19 on the death certificate by date registered
+			// Weekly total but a little irregular at times, see: https://coronavirus.data.gov.uk/deaths
+			ONSweeklyDeaths: 'newOnsDeathsByRegistrationDate',
+			// Cumulative Weekly total
+			ONStotalDeaths: 'cumOnsDeathsByRegistrationDate'
 		};
+<<<<<<< HEAD
 		const response = (await axios.get(`https://api.coronavirus.data.gov.uk/v1/data?filters=areaName=United%20Kingdom;areaType=overview&structure=${JSON.stringify(structure)}`)).data;
 		for (const row of response.data.slice(0, response.length - 60)) {
 			data[row.date] = row;
 			delete data[row.date].date;
 		}
 		return data;
+=======
+
+		const URL = (await instance.get(`https://api.coronavirus.data.gov.uk/v1/data?filters=areaName=United%20Kingdom;areaType=overview&structure=${JSON.stringify(structure)}`)).data;
+		// const URL_STG = (await instance.get(`https://api.coronavirus-staging.data.gov.uk/v1/data?filters=areaName=United%20Kingdom;areaType=overview&structure=${JSON.stringify(structure)}`)).data;
+
+		return Promise.race([URL]).then(res => {
+			for (const row of res.data.slice(0, res.length - 60)) {
+				data[row.date] = row;
+				delete data[row.date].date;
+			}
+			return data;
+		});
+>>>>>>> 744a95cc2eb511427e68cbe00c9224cd47873883
 	} catch (err) {
 		logger.err('Error: Requesting UK Gov Data failed!', err);
 		return null;

@@ -6,23 +6,19 @@ const { testBasicProperties } = require('../../testingFunctions');
 
 chai.use(chaiHttp);
 
-<<<<<<< HEAD
-describe('TESTING /v3/covid-19/vaccine', () => {
-=======
-describe.skip('TESTING /v3/covid-19/vaccine', () => {
->>>>>>> 744a95cc2eb511427e68cbe00c9224cd47873883
-	it('/v3/covid-19/vaccine correct type', (done) => {
+describe.skip('TESTING /v3/covid-19/therapeutics', () => {
+	it('/v3/covid-19/therapeutics correct type', (done) => {
 		chai.request(app)
-			.get('/v3/covid-19/vaccine')
+			.get('/v3/covid-19/therapeutics')
 			.end((err, res) => {
 				testBasicProperties(err, res, 200, 'object');
 				res.body.data.length.should.be.at.least(1);
 				done();
 			});
 	});
-	it('/v3/covid-19/vaccine correct attributes', (done) => {
+	it('/v3/covid-19/therapeutics correct attributes', (done) => {
 		chai.request(app)
-			.get('/v3/covid-19/vaccine')
+			.get('/v3/covid-19/therapeutics')
 			.end((err, res) => {
 				testBasicProperties(err, res, 200, 'object');
 				res.body.should.have.property('source');
@@ -33,16 +29,13 @@ describe.skip('TESTING /v3/covid-19/vaccine', () => {
 					element.should.have.property('candidates');
 				});
 				res.body.data.forEach(element => {
-					element.should.have.property('candidate');
-					element.should.have.property('sponsors');
+					element.should.have.property('medicationClass');
+					element.should.have.property('tradeName');
 					element.should.have.property('details');
+					element.should.have.property('developerResearcher');
+					element.should.have.property('sponsors');
 					element.should.have.property('trialPhase');
-					element.should.have.property('institutions');
-<<<<<<< HEAD
-					element.should.have.property('funding');
-=======
-					element.should.have.property('mechanism');
->>>>>>> 744a95cc2eb511427e68cbe00c9224cd47873883
+					element.should.have.property('lastUpdate');
 				});
 				done();
 			});

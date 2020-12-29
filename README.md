@@ -14,9 +14,9 @@
 
 # Welcome to disease.sh - An open API for disease-related statistics
 
-| Information | Discord | Donate |
-|:------------|:---------|:-------|
-| This API provides a big range of detailed information about multiple viruses. From COVID19 global data overviews to city/region specific mobility data, and data on the current outbreak of Influenza. We also provide official government data for some countries, more to be added soon.<br><br>The core-team currently consists of 4 people from 4 different countries working hard to keep this up and running, but it's an open-source project, so if you want, come help us!| [![Discord server](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.icons8.com%2Fcolor%2F2x%2Fdiscord-logo.png&f=1&nofb=1)](https://discord.gg/cEDxzfW) | [![BuyMeACoffee](https://www.buymeacoffee.com/assets/img/guidelines/logo-mark-1.svg)](https://www.buymeacoffee.com/covidapi/shop) |
+| Information | Discord |
+|:------------|:---------:|
+| This API provides a big range of detailed information about multiple viruses. From COVID19 global data overviews to city/region specific mobility data, and data on the current outbreak of Influenza. We also provide official government data for some countries, more to be added soon.<br><br>The core-team currently consists of 4 people from 4 different countries working hard to keep this up and running, but it's an open-source project, so if you want, come help us!| [![Discord server](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.icons8.com%2Fcolor%2F2x%2Fdiscord-logo.png&f=1&nofb=1)](https://discord.gg/cEDxzfW) |
 
 **Check out** our homepage and **sign up** for our newsletter [here](https://disease.sh/)
 
@@ -42,7 +42,11 @@ Disease.sh Documentation can be found [here](https://disease.sh/docs/)
 3. in the new `.env` file, change `REDIS_HOST` to localhost
 4. Change the env variables to fit your environment (leave them blank for default values)
 6. In one window run `redis-server`
+<<<<<<< HEAD
 7. Run `npm install` to install the packages
+=======
+7. Run `npm ci` to install the packages
+>>>>>>> 744a95cc2eb511427e68cbe00c9224cd47873883
 8. In another window run `npm run start:dev`
 9. Open your browser and navigate to `localhost:{PORT}` (PORT being the port specified in your `.env` file)
 10. You should now see the APIs landing page
@@ -104,6 +108,10 @@ Did you build a project with our API? We now offer an "awesome-list" for you to 
 
 > https://coronavirus.data.gov.uk
 
+> https://covid19.go.id
+
+> https://datadashboard.health.gov.il/COVID-19/general
+
 # Contributing
 - [How to Contribute](./CONTRIBUTING.md)
 
@@ -138,6 +146,11 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://lioncoding.com"><img src="https://avatars0.githubusercontent.com/u/26142591?v=4" width="100px;" alt=""/><br /><sub><b>Kodjo Laurent Egbakou</b></sub></a><br /><a href="https://github.com/disease-sh/API/commits?author=egbakou" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/jsebastianms1"><img src="https://avatars3.githubusercontent.com/u/22509688?v=4" width="100px;" alt=""/><br /><sub><b>Juan Sebastián Marulanda Sánchez</b></sub></a><br /><a href="https://github.com/disease-sh/API/commits?author=jsebastianms1" title="Code">💻</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/collin-street/"><img src="https://avatars3.githubusercontent.com/u/30121540?v=4" width="100px;" alt=""/><br /><sub><b>Collin-St</b></sub></a><br /><a href="https://github.com/disease-sh/API/commits?author=Collin-St" title="Code">💻</a></td>
+<<<<<<< HEAD
+=======
+    <td align="center"><a href="http://marveldc.me"><img src="https://avatars2.githubusercontent.com/u/24299563?v=4" width="100px;" alt=""/><br /><sub><b>MarvelDC</b></sub></a><br /><a href="https://github.com/disease-sh/API/commits?author=MarvelDC" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://zentreax.dev/"><img src="https://avatars3.githubusercontent.com/u/36458019?v=4" width="100px;" alt=""/><br /><sub><b>Zentreaxᴰᵉᵛ</b></sub></a><br /><a href="https://github.com/disease-sh/API/commits?author=Zentreax" title="Code">💻</a></td>
+>>>>>>> 744a95cc2eb511427e68cbe00c9224cd47873883
   </tr>
 </table>
 

@@ -4,7 +4,6 @@ const logger = require('../../utils/logger');
 const { getCurrentWeek } = require('../../utils/dateTimeUtils');
 
 const weekNumber = getCurrentWeek() - 2;
-
 const ILINetURL = `https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/senAllregt${weekNumber}.html`;
 const USPHLURL = `https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/whoAllregt_phl${weekNumber}.html`;
 const USCLURL = `https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/whoAllregt_cl${weekNumber}.html`;
