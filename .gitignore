@@ -91,6 +91,7 @@ dist
 ### now ###
 .now
 .vercel
+now.json
 
 # Disable reminder in prompt
 ignoredirmessage
