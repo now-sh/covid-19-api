@@ -1,0 +1,13 @@
+{
+  "name": "covid-19-api",
+  "version": "1.0.0",
+  "description": "Covid-19 API Proxy",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "CasjaysDev",
+  "license": "ISC"
+}
