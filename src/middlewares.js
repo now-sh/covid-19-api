@@ -21,8 +21,27 @@ function errorHandler(err, req, res, next) {
   });
 }
 
+const onProxyError = function (err, req, res) {
+  errorHandler(err);
+};
+
+const onProxyReq = function (proxyReq, req, res) {
+  proxyReq.setHeader('accept', 'application/json');
+};
+
+const onProxyRes = function (proxyRes, req, res) {
+  proxyRes.headers['accept'] = 'application/json';
+  proxyRes.headers['x-powered-by'] = 'CasjaysDev API';
+  delete proxyRes.headers[
+    ('ng-key', 'x-powered-by', 'x-download-options', 'server')
+  ];
+};
+
 module.exports = {
   notFound,
   ServerError,
   errorHandler,
+  onProxyError,
+  onProxyReq,
+  onProxyRes,
 };
