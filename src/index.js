@@ -9,7 +9,6 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 require('dotenv').config();
 
 const middlewares = require('./middlewares');
-const API_SERVICE_URL = 'https://disease.sh';
 
 const app = express();
 
@@ -23,10 +22,10 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 app.use(
   '/v3',
   createProxyMiddleware({
-    target: API_SERVICE_URL,
+    target: 'https://disease.sh/v3',
     changeOrigin: true,
     pathRewrite: {
-      [`^/v3`]: API_SERVICE_URL,
+      [`^/v3`]: 'https://disease.sh/v3',
     },
   })
 );
