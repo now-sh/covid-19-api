@@ -9,7 +9,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 require('dotenv').config();
 
 const middlewares = require('./middlewares');
-const API_SERVICE_URL = 'https://disease.sh/v3';
+const API_SERVICE_URL = 'https://disease.sh';
 
 const app = express();
 
