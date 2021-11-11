@@ -1,5 +1,5 @@
             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE  
-                    Version 2, December 2021  
+                    Version 2, December 2004  
 
  Copyright (C) 2021 Jason Hempstead <git-admin@casjaysdev.com>  
   
@@ -10,4 +10,4 @@
             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE  
    TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION  
   
-  0. You just DO WHAT THE FUCK YOU WANT TO.  
+  1. You just DO WHAT THE FUCK YOU WANT TO.  

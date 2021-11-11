@@ -1,23 +1,19 @@
-<h1 align=center>
-👋 Welcome to the covid-19-api project 👋
-</h1>
+# 👋 Welcome to the covid-19-api project 👋
 
-## Project setup
+  Covid-19 API Proxy for [disease.sh]([http://](https://github.com/disease-sh/api))
+
+## Run production  
 
 ```shell
-npm install
+npm i
+node run start
 ```
 
-### run server for development
+## Run Development  
 
 ```shell
+npm i -D
 npm run dev
-```
-
-### run for production
-
-```shell
-npm run start
 ```
   
 ## Author  
