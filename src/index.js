@@ -22,7 +22,7 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 app.use(
   '/v3',
   createProxyMiddleware({
-    target: 'https://disease.sh/v3',
+    target: 'https://disease.sh',
     changeOrigin: true,
     pathRewrite: {
       [`^/v3`]: 'https://disease.sh/v3',
